@@ -1,0 +1,41 @@
+%!PS
+
+/cm { 28.346 mul } bind def % conversion point -> cm
+
+% distances
+/marge    1.5 cm def
+/largeur 21.0 cm def
+/hauteur 29.7 cm def
+
+/taille-titre   25 def
+/taille-echelle 13 def
+
+/cloison        {  5 setlinewidth } bind def % largeur des cloisons
+/cloison-double { 10 setlinewidth } bind def % largeur des cloisons doubles
+/porteur        { 18 setlinewidth } bind def % largeur des murs porteurs
+
+% utilitaires
+
+% passage en ISOLatin-1 (pour accents corrects)
+% pris dans Red Book [en p.275, fr p.284]
+/convert2latin1 { % <font-name> convert2latin1 -
+  % calcule le nouveau nom
+  dup dup dup dup
+  length string cvs
+  exch length 10 add dup string dup 3 -1 roll 10 sub (-ISOLatin1) putinterval
+  dup 3 1 roll exch 0 exch  putinterval cvn
+  % change l'encodage
+  exch dup findfont
+  dup length dict
+  begin
+    { 1 index /FID ne {def} {pop pop} ifelse } forall
+    /Encoding ISOLatin1Encoding def
+    currentdict
+  end
+  definefont pop
+  def
+} bind def
+
+/Helvetica      convert2latin1
+/Helvetica-Bold convert2latin1
+
