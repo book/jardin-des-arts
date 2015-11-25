@@ -50,3 +50,10 @@
     stroke
   grestore
 } def
+
+/titre   { % <string> titre -
+  gsave
+    marge hauteur marge sub taille-titre sub moveto
+    /Helvetica-Bold taille-titre selectfont show
+  grestore
+} bind def
