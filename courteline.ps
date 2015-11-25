@@ -57,3 +57,58 @@
     /Helvetica-Bold taille-titre selectfont show
   grestore
 } bind def
+
+% pièces
+
+/salle-de-bain {
+  gsave
+    show-grille {
+       -5    0 moveto
+        0  203 rlineto
+      310    0 rlineto
+        0 -203 rlineto
+      clip newpath
+      0 0 moveto grille
+      cliprestore
+    } if
+
+    -2.5 0 moveto
+    cloison 0 185 rlineto
+    currentpoint stroke moveto
+    -2.5 9 rmoveto
+    porteur 310 0 rlineto stroke
+
+    0 150 2.5 add moveto
+    cloison 85 0 rlineto
+    currentpoint stroke moveto
+    2.5 -2.5 rmoveto
+    0 35 rlineto stroke
+
+    305 185 moveto
+    -2.5 0 rmoveto
+    0 -185 rlineto
+    stroke
+
+    1 setlinewidth
+    -5 0 moveto
+    310 0 rlineto stroke
+
+  grestore
+} def
+
+% document
+
+/show-grille true def
+
+(Salle de bain) titre
+1 cm 100 7 div div % echelle
+
+gsave
+  marge dup translate
+  90 rotate
+  dup scale
+  5 -203 translate
+  salle-de-bain
+grestore
+
+showpage
