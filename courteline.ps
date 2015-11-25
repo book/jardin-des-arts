@@ -96,6 +96,39 @@
   grestore
 } def
 
+/salle-de-bain+wc {
+  gsave
+    show-grille {
+       -5    0 moveto
+        0  203 rlineto
+      320    0 rlineto
+        0 -203 rlineto
+      clip newpath
+      0 0 moveto grille
+      cliprestore
+    } if
+
+    -2.5 0 moveto
+    cloison 0 185 rlineto
+    currentpoint stroke moveto
+    -5.5 9 rmoveto
+    porteur 331 0 rlineto stroke
+
+    90 2.5 add 0 moveto
+    cloison 0 185 rlineto
+
+    315 185 moveto
+    -2.5 0 rmoveto
+    0 -185 rlineto
+    stroke
+
+    1 setlinewidth
+    -5 0 moveto
+    320 0 rlineto stroke
+
+  grestore
+} def
+
 % document
 
 /show-grille true def
@@ -109,6 +142,19 @@ gsave
   dup scale
   5 -203 translate
   salle-de-bain
+grestore
+
+showpage
+
+(Salle de bain + WC) titre
+1 cm 100 7 div div % echelle
+
+gsave
+  marge dup translate
+  90 rotate
+  dup scale
+  5 -203 translate
+  salle-de-bain+wc
 grestore
 
 showpage
