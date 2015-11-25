@@ -129,9 +129,50 @@
   grestore
 } def
 
+/cuisine {
+  gsave
+     -5    0 moveto
+      0  280 rlineto
+    515    0 rlineto
+      0 -280 rlineto
+    clip newpath
+    0 0 moveto show-grille { grille } if
+    cliprestore
+
+    -5 0 moveto
+    cloison-double 0 280 rlineto currentpoint stroke
+    moveto -8 9 rmoveto
+    porteur 345 0 rlineto
+    150 0 rmoveto
+    30 0 rlineto
+    30 -280 -18 add rmoveto
+    -367 0 rlineto stroke
+
+    cloison-double 502 5 add 0 moveto
+    0 270 rlineto stroke
+    cloison 502 10 add 270 2.5 add moveto
+    -23 0 rlineto
+
+    stroke
+  grestore
+} def
+
 % document
 
 /show-grille true def
+
+(Cuisine) titre
+1 cm 100 4.5 div div % echelle
+
+gsave
+  marge dup translate
+  90 rotate
+  dup scale
+  5 -280 -18 add translate
+  cuisine
+grestore
+
+showpage
 
 (Salle de bain) titre
 1 cm 100 7 div div % echelle
