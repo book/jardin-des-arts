@@ -14,7 +14,8 @@
 /cloison-double { 10 setlinewidth } bind def % largeur des cloisons doubles
 /mur-porteur        { 18 setlinewidth } bind def % largeur des murs mur-porteurs
 
-/debug false def
+/show-grille true  def
+/debug       false def
 
 % utilitaires
 
@@ -293,9 +294,9 @@ gsave
   gsave 1453  113 translate salle-de-bain    grestore
 grestore
 
-showpage
-
 /show-grille true def
+
+showpage
 
 (Cuisine) titre
 1 cm 100 4.5 div div dup echelle
