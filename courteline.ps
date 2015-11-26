@@ -102,6 +102,18 @@
   grestore
 } def
 
+% elements
+
+/bac-a-fleurs {
+  gsave
+    1 setlinewidth
+    0 0 moveto 0 264 rlineto 50 0 rlineto 0 -264 rlineto -50 0 rlineto
+    7 7 moveto 0 250 rlineto 36 0 rlineto 0 -250 rlineto -36 0 rlineto
+    gsave 1 setgray fill grestore
+    stroke
+  grestore
+} def
+
 % pièces
 
 /salle-de-bain {
@@ -197,16 +209,6 @@
     cloison 502 10 add 270 2.5 add moveto
     -23 0 rlineto
 
-    stroke
-  grestore
-} def
-
-/bac-a-fleurs {
-  gsave
-    1 setlinewidth
-    0 0 moveto 0 264 rlineto 50 0 rlineto 0 -264 rlineto -50 0 rlineto
-    7 7 moveto 0 250 rlineto 36 0 rlineto 0 -250 rlineto -36 0 rlineto
-    gsave 1 setgray fill grestore
     stroke
   grestore
 } def
