@@ -19,6 +19,11 @@
 
 % utilitaires
 
+/sum {
+  counttomark 1 sub
+  { add } repeat
+} bind def
+
 % passage en ISOLatin-1 (pour accents corrects)
 % pris dans Red Book [en p.275, fr p.284]
 /convert2latin1 { % <font-name> convert2latin1 -
@@ -211,14 +216,17 @@
     show-grille {
         0   0  moveto
         0  280 rlineto
-      550    0 rlineto
+     1220    0 rlineto
         0 -280 rlineto
       clip newpath
       grille
       cliprestore
     } if
     gsave -20 8 translate bac-a-fleurs grestore
-    gsave 1188 8 translate bac-a-fleurs grestore
+    gsave -20 -26 -264 add translate bac-a-fleurs grestore
+    mark 70 95 128 310 450 95 70 -30 sum dup
+    gsave 8 translate bac-a-fleurs grestore
+    gsave -26 -264 add translate bac-a-fleurs grestore
     mur-porteur
     0 -9  moveto 70 0 rlineto 95 0 rmoveto 128 0 rlineto 310 0 rmoveto
                 450 0 rlineto 95 0 rmoveto  70 0 rlineto stroke
