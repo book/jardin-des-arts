@@ -12,7 +12,7 @@
 
 /cloison        {  5 setlinewidth } bind def % largeur des cloisons
 /cloison-double { 10 setlinewidth } bind def % largeur des cloisons doubles
-/porteur        { 18 setlinewidth } bind def % largeur des murs porteurs
+/mur-porteur        { 18 setlinewidth } bind def % largeur des murs mur-porteurs
 
 /debug false def
 
@@ -114,7 +114,7 @@
     cloison 0 185 rlineto
     currentpoint stroke moveto
     -2.5 9 rmoveto
-    porteur 310 0 rlineto stroke
+    mur-porteur 310 0 rlineto stroke
 
     0 150 2.5 add moveto
     cloison 85 0 rlineto
@@ -150,7 +150,7 @@
     cloison 0 185 rlineto
     currentpoint stroke moveto
     -5.5 9 rmoveto
-    porteur 331 0 rlineto stroke
+    mur-porteur 331 0 rlineto stroke
 
     90 2.5 add 0 moveto
     cloison 0 185 rlineto
@@ -180,7 +180,7 @@
     -5 0 moveto
     cloison-double 0 280 rlineto currentpoint stroke
     moveto -8 9 rmoveto
-    porteur 345 0 rlineto
+    mur-porteur 345 0 rlineto
     150 0 rmoveto
     30 0 rlineto
     30 -280 -18 add rmoveto
