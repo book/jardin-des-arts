@@ -293,13 +293,16 @@ gsave
   dup scale
   0 20 translate
   90 rotate
-  0 298 4 mul 36 add neg translate
-  gsave  358  930 translate terrasse         grestore
-  gsave  200  316 translate chambre-4        grestore
-  gsave    0   18 translate chambre-5        grestore
-  gsave  673  113 translate salle-de-bain+wc grestore
-  gsave 1229  316 translate cuisine          grestore
-  gsave 1453  113 translate salle-de-bain    grestore
+  0 298 4 mul neg translate
+  gsave 172 338 add
+      298 3 mul translate terrasse         grestore
+  gsave 200 298 translate chambre-4        grestore
+  gsave   0   0 translate chambre-5        grestore
+  gsave 673  95 translate salle-de-bain+wc grestore
+  gsave mark 172 18 10 468 3 65 5 65 3 383 10 sum
+            298 translate cuisine          grestore
+  gsave mark 172 18 10 347 5 96 5 90 5 210 5 65 3 258 5 134 5 sum
+             95 translate salle-de-bain    grestore
 grestore
 
 /show-grille true def
