@@ -205,6 +205,26 @@
   grestore
 } def
 
+/terrasse {
+  gsave
+    show-grille {
+        0   0  moveto
+        0  280 rlineto
+      550    0 rlineto
+        0 -280 rlineto
+      clip newpath
+      grille
+      cliprestore
+    } if
+    gsave -20 8 translate bac-a-fleurs grestore
+    gsave 1188 8 translate bac-a-fleurs grestore
+    mur-porteur
+    0 -9  moveto 70 0 rlineto 95 0 rmoveto 128 0 rlineto 310 0 rmoveto
+                450 0 rlineto 95 0 rmoveto  70 0 rlineto stroke
+    0 289 moveto 1218 0 rlineto stroke
+  grestore
+} def
+
 /chambre-4 {
   gsave
     show-grille {
@@ -265,6 +285,7 @@ gsave
   0 20 translate
   90 rotate
   0 298 4 mul 36 add neg translate
+  gsave  358  930 translate terrasse         grestore
   gsave  200  316 translate chambre-4        grestore
   gsave    0   18 translate chambre-5        grestore
   gsave  673  113 translate salle-de-bain+wc grestore
