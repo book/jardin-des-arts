@@ -58,6 +58,36 @@
   grestore
 } bind def
 
+/echelle { % <echelle> echelle -
+  gsave
+    largeur marge sub hauteur marge sub taille-titre sub translate
+    dup 1 cm div 10000 mul round 100 div 6 string cvs exch % ratio
+    /Helvetica taille-echelle selectfont
+    gsave
+      dup scale
+      1 setlinewidth
+      0.2 setgray
+      0 0 moveto -100.5 0 rlineto
+      0 10 rlineto 10 -10 rmoveto currentpoint stroke moveto
+      9 {
+        0 7 rlineto 10 -7 rmoveto
+      } repeat
+      0 10 rlineto 10 -10 rmoveto
+      stroke
+    grestore
+    0 taille-echelle 1.1 mul neg moveto
+    (10 cm) stringwidth pop
+    (1 mètre) stringwidth pop sub dup 0 rmoveto
+    (1 carré = 10 cm) dup stringwidth exch neg exch rmoveto show
+    neg -15 rmoveto
+    dup stringwidth exch neg exch rmoveto
+    ( cm = 1 mètre)
+    dup stringwidth exch neg exch rmoveto
+    exch show show
+    stroke
+  grestore
+} def
+
 % pièces
 
 /salle-de-bain {
@@ -162,7 +192,7 @@
 /show-grille true def
 
 (Cuisine) titre
-1 cm 100 4.5 div div % echelle
+1 cm 100 4.5 div div dup echelle
 
 gsave
   marge dup translate
@@ -188,7 +218,7 @@ grestore
 showpage
 
 (Salle de bain + WC) titre
-1 cm 100 7 div div % echelle
+1 cm 100 7 div div dup echelle
 
 gsave
   marge dup translate
@@ -201,7 +231,7 @@ grestore
 showpage
 
 (Salles de bain) titre
-1 cm 100 5 div div % echelle
+1 cm 100 5 div div dup echelle
 
 gsave
   marge dup translate
