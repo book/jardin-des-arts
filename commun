@@ -1,0 +1,116 @@
+/cm { 28.346 mul } bind def % conversion point -> cm
+
+% distances
+/marge    1.5 cm def
+/largeur 21.0 cm def
+/hauteur 29.7 cm def
+
+/taille-titre   25 def
+/taille-echelle 13 def
+
+/cloison        {  5 setlinewidth } bind def % largeur des cloisons
+/cloison-double { 10 setlinewidth } bind def % largeur des cloisons doubles
+/mur-porteur        { 18 setlinewidth } bind def % largeur des murs mur-porteurs
+
+/show-grille true  def
+/debug       false def
+
+% utilitaires
+
+/sum {
+  counttomark 1 sub
+  { add } repeat
+} bind def
+
+% passage en ISOLatin-1 (pour accents corrects)
+% pris dans Red Book [en p.275, fr p.284]
+/convert2latin1 { % <font-name> convert2latin1 -
+  % calcule le nouveau nom
+  dup dup dup dup
+  length string cvs
+  exch length 10 add dup string dup 3 -1 roll 10 sub (-ISOLatin1) putinterval
+  dup 3 1 roll exch 0 exch  putinterval cvn
+  % change l'encodage
+  exch dup findfont
+  dup length dict
+  begin
+    { 1 index /FID ne {def} {pop pop} ifelse } forall
+    /Encoding ISOLatin1Encoding def
+    currentdict
+  end
+  definefont pop
+  def
+} bind def
+
+/Helvetica      convert2latin1
+/Helvetica-Bold convert2latin1
+
+% décorations de page
+
+/titre   { % <string> titre -
+  gsave
+    marge hauteur marge sub taille-titre sub moveto
+    /Helvetica-Bold taille-titre selectfont show
+    marge marge moveto
+    debug {
+      [ 5 2 2 2 ] 0 setdash
+      0 hauteur marge 2 mul  sub rlineto
+      largeur marge 2 mul sub 0 rlineto
+      0 hauteur marge 2 mul sub neg rlineto
+      closepath
+      stroke
+    } if
+  grestore
+} bind def
+
+/echelle { % <echelle> echelle -
+  gsave
+    largeur marge sub hauteur marge sub taille-titre sub translate
+    dup 1 cm div 10000 mul round 100 div 6 string cvs exch % ratio
+    /Helvetica taille-echelle selectfont
+    gsave
+      dup scale
+      1 setlinewidth
+      0.2 setgray
+      0 0 moveto -100.5 0 rlineto
+      0 10 rlineto 10 -10 rmoveto currentpoint stroke moveto
+      9 {
+        0 7 rlineto 10 -7 rmoveto
+      } repeat
+      0 10 rlineto 10 -10 rmoveto
+      stroke
+    grestore
+    0 taille-echelle 1.1 mul neg moveto
+    dup stringwidth pop
+    ( cm = 1 m) dup stringwidth pop 3 -1 roll add
+    (1 carré = 10 cm, ) dup stringwidth pop 3 -1 roll add
+    neg 0 rmoveto
+    show exch show show
+    stroke
+  grestore
+} def
+
+% éléments de dessin
+
+/grille { % grille -
+  gsave
+    1 setlinewidth
+    0.80 setgray
+    2 {
+      200 { 0 0 moveto 0 2000 rlineto 10 0 translate } repeat
+      90 rotate
+    } repeat
+    stroke
+  grestore
+} def
+
+/bac-a-fleurs {
+  gsave
+    1 setlinewidth
+    0 0 moveto 0 264 rlineto 50 0 rlineto 0 -264 rlineto -50 0 rlineto
+    7 7 moveto 0 250 rlineto 36 0 rlineto 0 -250 rlineto -36 0 rlineto
+    gsave 1 setgray fill grestore
+    stroke
+  grestore
+} def
+
