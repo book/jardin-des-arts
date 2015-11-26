@@ -195,6 +195,21 @@
 
 % document
 
+/show-grille false def
+
+(Plan d'ensemble) titre
+1 cm 100 1 div div dup echelle
+
+gsave
+  marge dup translate
+  dup scale
+  gsave  673  113 translate salle-de-bain+wc grestore
+  gsave 1229  316 translate cuisine          grestore
+  gsave 1453  113 translate salle-de-bain    grestore
+grestore
+
+showpage
+
 /show-grille true def
 
 (Cuisine) titre
