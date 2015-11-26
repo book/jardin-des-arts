@@ -76,14 +76,11 @@
       stroke
     grestore
     0 taille-echelle 1.1 mul neg moveto
-    (10 cm) stringwidth pop
-    (1 mètre) stringwidth pop sub dup 0 rmoveto
-    (1 carré = 10 cm) dup stringwidth exch neg exch rmoveto show
-    neg -15 rmoveto
-    dup stringwidth exch neg exch rmoveto
-    ( cm = 1 mètre)
-    dup stringwidth exch neg exch rmoveto
-    exch show show
+    dup stringwidth pop
+    ( cm = 1 m) dup stringwidth pop 3 -1 roll add
+    (1 carré = 10 cm, ) dup stringwidth pop 3 -1 roll add
+    neg 0 rmoveto
+    show exch show show
     stroke
   grestore
 } def
