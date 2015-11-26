@@ -14,6 +14,8 @@
 /cloison-double { 10 setlinewidth } bind def % largeur des cloisons doubles
 /porteur        { 18 setlinewidth } bind def % largeur des murs porteurs
 
+/debug false def
+
 % utilitaires
 
 % passage en ISOLatin-1 (pour accents corrects)
@@ -55,6 +57,15 @@
   gsave
     marge hauteur marge sub taille-titre sub moveto
     /Helvetica-Bold taille-titre selectfont show
+    marge marge moveto
+    debug {
+      [ 5 2 2 2 ] 0 setdash
+      0 hauteur marge 2 mul  sub rlineto
+      largeur marge 2 mul sub 0 rlineto
+      0 hauteur marge 2 mul sub neg rlineto
+      closepath
+      stroke
+    } if
   grestore
 } bind def
 
