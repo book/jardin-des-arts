@@ -16,26 +16,20 @@
       cliprestore
     } if
 
-    -2.5 0 moveto
-    cloison 0 185 rlineto
-    currentpoint stroke moveto
-    -2.5 9 rmoveto
-    mur-porteur 310 0 rlineto stroke
+    mur-porteur
+    -5 185 9 add moveto mark 5 90 5 210 5 sum 0 rlineto stroke
 
-    0 150 2.5 add moveto
-    cloison 85 0 rlineto
-    currentpoint stroke moveto
-    2.5 -2.5 rmoveto
-    0 35 rlineto stroke
+    cloison
+    -2.5 0 moveto 0 185 rlineto
+    0 150 2.5 add  moveto 90 0 rlineto
+    90 2.5 sub 150 moveto 0 35 rlineto
+    mark 85 5 210 2.5 sum 0 moveto 0 185 rlineto
 
-    305 185 moveto
-    -2.5 0 rmoveto
-    0 -185 rlineto
+    -5 -2.5 moveto mark 10 5 90 5 45 sum 0 rlineto
+    80 0 rmoveto 85 0 rlineto
+
     stroke
 
-    1 setlinewidth
-    -5 0 moveto
-    310 0 rlineto stroke
 
   grestore
 } def
