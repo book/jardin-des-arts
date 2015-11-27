@@ -37,32 +37,25 @@
 /salle-de-bain+wc {
   gsave
     show-grille {
-       -5    0 moveto
-        0  203 rlineto
-      320    0 rlineto
-        0 -203 rlineto
+        0    0 moveto
+        0  185 rlineto
+        mark 90 5 210 sum dup 0 rlineto
+        0 exch neg rlineto
       clip newpath
       0 0 moveto grille
       cliprestore
     } if
 
-    -2.5 0 moveto
-    cloison 0 185 rlineto
-    currentpoint stroke moveto
-    -5.5 9 rmoveto
-    mur-porteur 331 0 rlineto stroke
-
-    90 2.5 add 0 moveto
-    cloison 0 185 rlineto
-
-    315 185 moveto
-    -2.5 0 rmoveto
-    0 -185 rlineto
+    mur-porteur
+    -8 185 9 add moveto 331 0 rlineto
     stroke
 
-    1 setlinewidth
-    -5 0 moveto
-    320 0 rlineto stroke
+    cloison
+    -2.5 -5 moveto             0 190 rlineto
+    90 2.5 add 0 moveto        0 185 rlineto
+    mark 90 5 210 2.5 sum 0 moveto 0 185 rlineto
+    80 -2.5 moveto 30 0 rlineto 80 0 rmoveto 120 0 rlineto
+    stroke
 
   grestore
 } def
