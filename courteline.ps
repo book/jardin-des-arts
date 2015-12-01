@@ -144,6 +144,31 @@
   grestore
 } def
 
+/chambre-2 {
+  gsave
+    show-grille {
+        0   0  moveto
+        0  270 rlineto
+      367    0 rlineto
+        0 -270 rlineto
+      clip newpath
+      grille
+      cliprestore
+    } if
+    mur-porteur
+    -10 -19 moveto 367 10 add 10 add 18 add 0 rlineto
+    -8 270 9 add moveto 385 18 add 0 rlineto
+    367 10 add 9 add 270 moveto 0 -140 rlineto
+    stroke
+    cloison
+    -2.5 -10 moveto 0 10 rlineto
+    -2.5 90 moveto 0 180 rlineto
+    367 2.5 add 270 moveto 0 -135 rlineto
+    0 -2.5 moveto 367 0 rlineto
+    stroke
+  grestore
+} def
+
 /chambre-4 {
   gsave
     show-grille {
@@ -208,6 +233,8 @@ gsave
       298 3 mul translate terrasse         grestore
   gsave mark 172 18 10 468 3 65 5 65 3 383 10 502 10 sum
             298 translate chambre-1        grestore
+  gsave mark 30 160 10 347 5 96 5 90 5 210 5 65 258 5 134 5 85 5 210 5 96 5 sum
+             10 translate chambre-2        grestore
   gsave 200 298 translate chambre-4        grestore
   gsave   0   0 translate chambre-5        grestore
   gsave 673  95 translate salle-de-bain+wc grestore
@@ -282,6 +309,18 @@ gsave
   90 rotate
   28 -298 translate
   chambre-1
+grestore
+
+showpage
+
+(Chambre 2) titre
+1 cm 100 4 div div dup echelle
+gsave
+  marge dup translate
+  dup scale
+  90 rotate
+  10 -288 translate
+  chambre-2
 grestore
 
 showpage
