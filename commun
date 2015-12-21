@@ -114,3 +114,26 @@
   grestore
 } def
 
+/porte-gauche { % radius
+  gsave
+    dup
+    1 setlinewidth
+    0.33 setgray
+    newpath 0 0 moveto 0 exch lineto
+    0 0 3 -1 roll 90 180 arc
+    0 0 lineto
+    stroke
+  grestore
+} bind def
+
+/porte-droite { % radius
+  gsave
+    dup
+    1 setlinewidth
+    0.33 setgray
+    newpath 0 0 moveto 0 lineto
+    0 0 3 -1 roll 0 90 arc
+    0 0 lineto
+    stroke
+  grestore
+} bind def
