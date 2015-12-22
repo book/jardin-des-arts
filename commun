@@ -8,9 +8,10 @@
 /taille-titre   25 def
 /taille-echelle 13 def
 
-/cloison        {  5 setlinewidth } bind def % largeur des cloisons
-/cloison-double { 10 setlinewidth } bind def % largeur des cloisons doubles
-/mur-porteur        { 18 setlinewidth } bind def % largeur des murs mur-porteurs
+/cloison        {  5 setlinewidth 0    setgray } bind def % largeur des cloisons
+/cloison-double { 10 setlinewidth 0    setgray } bind def % largeur des cloisons doubles
+/mur-porteur    { 18 setlinewidth 0    setgray } bind def % largeur des murs mur-porteurs
+/vitre          { 10 setlinewidth 0.33 setgray } bind def % fenêtre
 
 /show-grille true  def
 /debug       false def
