@@ -21,6 +21,7 @@
 /sum {
   counttomark 1 sub
   { add } repeat
+  exch pop
 } bind def
 
 % passage en ISOLatin-1 (pour accents corrects)
