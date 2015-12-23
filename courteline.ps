@@ -105,6 +105,34 @@
   grestore
 } def
 
+/cellier {
+  gsave
+    show-grille {
+        0   0  moveto
+        0  200 rlineto
+      135    0 rlineto
+        0 -200 rlineto
+      clip newpath
+      grille
+      cliprestore
+    } if
+    cloison
+    -2.5 -2.5 moveto 0 90  rlineto
+    currentpoint 5 add gsave translate 70 porte-gauche grestore
+    0 80 rmoveto
+    0 35 rlineto
+    -5 -2.5 moveto 134 10 add 0 rlineto
+    134 2.5 add  -5 moveto 0 190 rlineto
+    mark 80 3 2.5 sum 185 moveto 0 -60 rlineto
+    134 2.5 add 125 2.5 add moveto -51 0 rlineto
+    0 mark 185 18 -2.5 sum moveto 134 0 rlineto
+    stroke
+    mur-porteur
+    80 185 9 add moveto 54 0 rlineto
+    stroke
+  grestore
+} def
+
 /terrasse {
   gsave
     show-grille {
@@ -277,6 +305,8 @@ gsave
   gsave 673  95 translate salle-de-bain+wc grestore
   gsave mark 172 18 10 468 65 5 65 383 10 sum
             298 translate cuisine          grestore
+  gsave mark 172 18 10 468 65 5 65 383 10 90 5 sum
+       90 5 add translate cellier          grestore
   gsave mark 172 18 10 347 5 96 5 90 5 210 5 65 258 5 134 5 sum
              95 translate salle-de-bain    grestore
 grestore
