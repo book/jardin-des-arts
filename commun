@@ -11,7 +11,7 @@
 /cloison        {  5 setlinewidth 0    setgray } bind def % largeur des cloisons
 /cloison-double { 10 setlinewidth 0    setgray } bind def % largeur des cloisons doubles
 /mur-porteur    { 18 setlinewidth 0    setgray } bind def % largeur des murs mur-porteurs
-/vitre          { 10 setlinewidth 0.33 setgray } bind def % fenêtre
+/vitre          { 10 setlinewidth 0.50 setgray } bind def % fenêtre
 
 /show-grille true  def
 /debug       false def
