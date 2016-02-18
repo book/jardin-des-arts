@@ -145,8 +145,10 @@
     } if
     gsave -20 8 translate bac-a-fleurs grestore
     gsave -20 -26 -264 add translate bac-a-fleurs grestore
-    mark 70 95 128 310 450 95 70 -30 sum dup
-    gsave 8 translate bac-a-fleurs grestore
+    gsave
+      mark 70 95 128 310 450 95 70 -30 sum dup
+      8 translate bac-a-fleurs
+    grestore
     gsave -26 -264 add translate bac-a-fleurs grestore
     mur-porteur
     0 -9  moveto 70 0 rlineto 95 0 rmoveto 128 0 rlineto 310 0 rmoveto
