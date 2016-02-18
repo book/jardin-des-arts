@@ -82,8 +82,7 @@
     cloison-double 0 280 rlineto currentpoint stroke
     mur-porteur
     -13 289 moveto 345 0 rlineto
-    150 0 rmoveto
-    30 0 rlineto
+    150 0 rmoveto 30 0 rlineto
     30 -280 -18 add rmoveto
     -367 0 rlineto stroke
 
@@ -100,7 +99,7 @@
       5 0 translate -90 rotate 80 porte-gauche
     grestore
     gsave
-      5 0 translate 80 -90 rotate porte-gauche
+      mark -13 345 150 -5 sum 280 translate 90 rotate 80 porte-gauche
     grestore
   grestore
 } def
