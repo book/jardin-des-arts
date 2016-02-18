@@ -362,15 +362,19 @@ grestore
 
 showpage
 
-(Cuisine) titre
-1 cm 100 4.5 div div dup echelle
+(Cuisine + cellier) titre
+1 cm 100 3.5 div div dup echelle
 
 gsave
   marge dup translate
   90 rotate
   dup scale
-  13 -280 -18 add translate
-  cuisine
+  gsave
+    13 -280 -18 add translate
+    cuisine
+  grestore
+  90 13 5 add add -298 -185 -18 add add  translate
+  cellier
 grestore
 
 showpage
