@@ -157,6 +157,43 @@
   grestore
 } def
 
+/sejour {
+  gsave
+    show-grille {
+        0   0  moveto
+        0  298 rlineto
+      -28    0 rlineto
+        0  280 rlineto
+      818    0 rlineto
+        0 -280 rlineto
+      -340   0 rlineto
+        0 -578 rlineto
+      clip newpath
+      gsave -35 -0 translate grille grestore
+      cliprestore
+    } if
+    mur-porteur
+    mark 65 383 -3 sum 289 moveto 345 0 rlineto
+    65 3 add 289 moveto -128 -3 add 0 rlineto 
+    -63 mark 280 18 280 9 sum moveto 128 0 rlineto 310 0 rmoveto 450 0 rlineto
+    stroke
+    vitre
+    -63 128 add mark 280 18 280 -5 sum moveto 310 0 rlineto
+    -28 -5 add 298 moveto 0 280 rlineto
+    mark -28 818 5 sum 280 moveto 0 298 rlineto
+    stroke
+    cloison
+    
+    -2.5  0  moveto 0 280 rlineto
+    65 -185 rmoveto 0 -95 rlineto 
+     0 92.5 rmoveto -65 0 rlineto
+    stroke
+    cloison-double
+    mark 65 383 5 sum 0 moveto 0 280 rlineto
+    stroke
+  grestore
+} def
+
 /chambre-1 {
   gsave
     show-grille {
@@ -344,6 +381,8 @@ gsave
   0 298 4 mul neg translate
   gsave 172 338 add
       298 3 mul translate terrasse         grestore
+  gsave mark 200 468 65 5 sum
+            298 translate sejour           grestore
   gsave mark 172 18 10 468 65 5 65 383 10 502 10 sum
             298 translate chambre-1        grestore
   gsave mark 30 160 10 347 5 96 5 90 5 210 5 65 258 5 134 5 85 5 210 5 96 5 sum
@@ -399,6 +438,20 @@ grestore
 showpage
 
 %%Page: 4 4
+1 cm 100 3 div div dup echelle
+gsave
+  marge dup translate
+  dup scale
+-18 0 translate
+  90 rotate
+  58 -596 translate
+  sejour
+grestore
+(Séjour) titre
+
+showpage
+
+%%Page: 5 5
 (Chambre 1) titre
 1 cm 100 4 div div dup echelle
 gsave
@@ -411,7 +464,7 @@ grestore
 
 showpage
 
-%%Page: 5 5
+%%Page: 6 6
 (Chambre 2) titre
 1 cm 100 4 div div dup echelle
 gsave
@@ -424,7 +477,7 @@ grestore
 
 showpage
 
-%%Page: 6 6
+%%Page: 7 7
 (Chambre 3) titre
 1 cm 100 4 div div dup echelle
 gsave
@@ -442,7 +495,7 @@ grestore
 
 showpage
 
-%%Page: 7 7
+%%Page: 8 8
 (Chambre 4) titre
 1 cm 100 4 div div dup echelle
 gsave
@@ -455,7 +508,7 @@ grestore
 
 showpage
 
-%%Page: 8 8
+%%Page: 9 9
 (Chambre 5) titre
 1 cm 100 4 div div dup echelle
 gsave
