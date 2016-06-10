@@ -363,6 +363,31 @@
   grestore
 } def
 
+/cave {
+  gsave
+    show-grille {
+        0   0  moveto
+        0  280 rlineto
+      190    0 rlineto
+        0 -280 rlineto
+      clip newpath
+      grille
+      cliprestore
+    } if
+    mur-porteur
+    -9 0 moveto 0 289 rlineto
+    190 18 add 0 rlineto
+    0 -280 -18 add rlineto
+    -99 -9 add 0 rlineto
+    -85 0 rmoveto -6 -18 add 0 rlineto
+    stroke
+  grestore
+  gsave
+    6 2.5 add -9 translate
+    -90 rotate
+    newpath 0 0 moveto 80 porte-gauche
+  grestore
+} def
 
 % document
 
@@ -517,6 +542,18 @@ gsave
   -90 rotate
   -575 18 translate
   chambre-5
+grestore
+
+showpage
+
+%%Page: 10 10
+(Cave) titre
+1 cm 100 6 div div dup echelle
+gsave
+  marge dup translate
+  dup scale
+  18 18 translate
+  cave
 grestore
 
 showpage
