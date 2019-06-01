@@ -444,7 +444,9 @@ gsave
             -280 -18 add translate chambre-3        grestore
   gsave 200 298 translate chambre-4        grestore
   gsave   0   0 translate chambre-5        grestore
-  gsave 673  95 translate salle-de-bain+wc grestore
+  gsave mark 172 18 10 347 5 96 5 sum  95 translate salle-de-bain+wc grestore
+  gsave mur-porteur mark 172 18 10 347 5 96 sum 95 185 9 add add moveto 386 0 rlineto stroke grestore
+  gsave cloison     mark 172 18 10 347 5 96 386 -75 sum 95 -2.5 add moveto 75 0 rlineto stroke grestore
   gsave mark 172 18 10 468 65 5 65 383 10 sum
             298 translate cuisine          grestore
   gsave mark 172 18 10 468 65 5 65 383 10 90 5 sum
